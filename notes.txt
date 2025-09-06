@@ -1,0 +1,20 @@
+superuser admin admin@crashblog.com pass:1234
+
+
+PROCESS
+when we run manage.py file it reads 'crashblog.settings' and goes to settings.py
+in settings.py it reads ROOT_URLCONF = 'crashblog.urls' and goes to urls.py 
+in urls.py it finds mathching url pattern 'about/' and calls "about" view
+then it goes to "about" view in views.py which calls 'core/about.html' template
+'core/about.html' template is then rendered to the user
+
+CREATING DATABASE MODEL
+in models.py create class with fields of specified types
+to see the model in admin site register it in admin.py by first importing it to the file 
+run python manage.py make migrations -> creates a file with operations to database
+run python manage.py migrate  -> will run operations on the database
+add objects on admin site
+extra: 
+to see ALL migration files and applied migrations run python manage.py showmigrations
+to undo ALL migrations run python manage.by migrate app_name zero, then delete migration files
+to return to previous migration run python manage.py app_name 0000 (migration number)
